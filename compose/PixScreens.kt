@@ -204,7 +204,7 @@ private fun PixGift(
                 .clip(RoundedCornerShape(px(34.9f)))
                 .background(Surface)
                 .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.TopStart
         ) {
             SvgArt(artwork.gift, Modifier.offset(px(artX), px(artY))
                 .size(px(artWidth), px(artHeight)))
@@ -259,7 +259,7 @@ private fun PixCreditPill(
                 .clip(RoundedCornerShape(px(38.95f)))
                 .background(PremiumGradient)
                 .then(if (onSubscribe != null) Modifier.clickable { onSubscribe() } else Modifier),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.TopStart
         ) {
             PixText(
                 subscribeLabel, subscribeFontPx, TextPrimary, FontWeight.Medium,
@@ -629,7 +629,7 @@ fun PixProfileScreen(
             Box(
                 Modifier.fillMaxSize().clip(CircleShape).background(Pink)
                     .border(px(3.16f), Color(0xFF303338), CircleShape),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.TopStart
             ) {
                 PixText(
                     text.avatarInitial, 105.26f, Color.White,
@@ -646,7 +646,7 @@ fun PixProfileScreen(
                 Modifier.fillMaxSize().clip(RoundedCornerShape(px(33.68f)))
                     .background(Color(0xFF302A36))
                     .then(if (onEditProfile != null) Modifier.clickable { onEditProfile() } else Modifier),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.TopStart
             ) {
                 PixText(
                     text.editProfile, 35.79f, Color(0xFFDAD8DF), FontWeight.Medium,
