@@ -68,6 +68,7 @@ data class PixArtwork(
     val templatesActive: Painter? = null,
     val inboxActive: Painter? = null,
     val profileActive: Painter? = null,
+    val usageSparkle: Painter? = null,
     val privateFolder: Painter? = null,
     val privateLock: Painter? = null,
     val collectionGrid: Painter? = null,
@@ -81,7 +82,8 @@ data class PixTemplateItem(
     val title: String,
     val usageText: String = "",
     val photo: Painter? = null,
-    val isHot: Boolean = false
+    val isHot: Boolean = false,
+    val titleTopPx: Float = 0f
 )
 
 data class PixTemplateScreenText(
@@ -189,7 +191,11 @@ private fun PixGift(
     y: Float,
     width: Float,
     height: Float,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
+    artX: Float = 21.16f,
+    artY: Float = 23.27f,
+    artWidth: Float = 60.29f,
+    artHeight: Float = 51.83f
 ) {
     FixedLayer(x, y, width, height) {
         Box(
@@ -200,7 +206,8 @@ private fun PixGift(
                 .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier),
             contentAlignment = Alignment.Center
         ) {
-            SvgArt(artwork.gift, Modifier.size(px(60.29f), px(51.83f)))
+            SvgArt(artwork.gift, Modifier.offset(px(artX), px(artY))
+                .size(px(artWidth), px(artHeight)))
         }
     }
 }
@@ -214,7 +221,21 @@ private fun PixCreditPill(
     y: Float,
     width: Float,
     height: Float,
-    onSubscribe: (() -> Unit)?
+    onSubscribe: (() -> Unit)?,
+    lightningX: Float = 22.21f,
+    lightningY: Float = 29.62f,
+    lightningWidth: Float = 29.62f,
+    lightningHeight: Float = 35.96f,
+    creditX: Float = 64.53f,
+    creditY: Float = 24.33f,
+    creditFontPx: Float = 41.2537f,
+    subscribeX: Float = 122.7f,
+    subscribeY: Float = 11.64f,
+    subscribeWidth: Float = 209.44f,
+    subscribeHeight: Float = 74.05f,
+    subscribeLabelX: Float = 21.16f,
+    subscribeLabelY: Float = 17.98f,
+    subscribeFontPx: Float = 37.0225f
 ) {
     FixedLayer(x, y, width, height) {
         Box(
@@ -224,22 +245,28 @@ private fun PixCreditPill(
         )
         SvgArt(
             artwork.creditLightning,
-            Modifier.offset(px(22.21f), px(29.62f)).size(px(29.62f), px(35.96f))
+            Modifier.offset(px(lightningX), px(lightningY))
+                .size(px(lightningWidth), px(lightningHeight))
         )
         PixText(
-            credits, 41.25f, Yellow,
-            modifier = Modifier.offset(px(64.53f), px(24.33f)),
+            credits, creditFontPx, Yellow,
+            modifier = Modifier.offset(px(creditX), px(creditY)).width(px(47f)).height(px(48f)),
             linePx = 48f
         )
         Box(
-            Modifier.offset(px(122.7f), px(11.64f))
-                .size(px(209.44f), px(74.05f))
+            Modifier.offset(px(subscribeX), px(subscribeY))
+                .size(px(subscribeWidth), px(subscribeHeight))
                 .clip(RoundedCornerShape(px(38.95f)))
                 .background(PremiumGradient)
                 .then(if (onSubscribe != null) Modifier.clickable { onSubscribe() } else Modifier),
             contentAlignment = Alignment.Center
         ) {
-            PixText(subscribeLabel, 37.02f, TextPrimary, FontWeight.Medium, linePx = 43f)
+            PixText(
+                subscribeLabel, subscribeFontPx, TextPrimary, FontWeight.Medium,
+                modifier = Modifier.offset(px(subscribeLabelX), px(subscribeLabelY))
+                    .width(px(166f)).height(px(43f)),
+                linePx = 43f
+            )
         }
     }
 }
@@ -333,6 +360,7 @@ private fun PixTemplateCard(
     y: Float,
     useTemplateLabel: String,
     hotLabel: String,
+    usageIcon: Painter?,
     onClick: (() -> Unit)?
 ) {
     FixedLayer(x, y, 523.6f, 804.98f) {
@@ -363,13 +391,18 @@ private fun PixTemplateCard(
                     .size(px(489.76f), px(105.78f))
             ) {
                 PixText(
-                    item.title, 35.96f, modifier = Modifier.width(px(375.51f)),
+                    item.title, 35.96f,
+                    modifier = Modifier.offset(y = px(item.titleTopPx))
+                        .width(px(375.51f)).height(px(100f)),
                     weight = FontWeight.Medium, linePx = 50f, maxLines = 2
                 )
                 if (item.usageText.isNotEmpty()) {
+                    SvgArt(usageIcon, Modifier.offset(px(0f), px(6.35f))
+                        .size(px(25.39f)))
                     PixText(
                         item.usageText, 35.96f,
-                        modifier = Modifier.align(Alignment.BottomEnd),
+                        modifier = Modifier.offset(px(34.91f), 0.dp)
+                            .width(px(93f)).height(px(42f)),
                         linePx = 42f
                     )
                 }
@@ -446,6 +479,7 @@ fun PixTemplateBrowsingScreen(
                 val photo = item.photo ?: artwork.templatePhotos.getOrNull(index)
                 PixTemplateCard(
                     item, photo, pos.first, pos.second, text.useTemplate, text.hotBadge,
+                    artwork.usageSparkle,
                     onTemplateClick?.let { callback -> { callback(item) } }
                 )
             }
@@ -575,9 +609,19 @@ fun PixProfileScreen(
             Modifier.offset(px(42.11f), px(50.53f)).size(px(63.16f))
                 .then(if (onSettings != null) Modifier.clickable { onSettings() } else Modifier)
         )
-        PixGift(artwork, 570.53f, 30.53f, 102.11f, 95.79f, onGift)
+        PixGift(
+            artwork, 570.53f, 30.53f, 102.11f, 95.79f, onGift,
+            artX = 21.05f, artY = 23.16f, artWidth = 60f, artHeight = 51.58f
+        )
         PixCreditPill(
-            credits, text.subscribe, artwork, 700f, 30.53f, 343.16f, 95.79f, onSubscribe
+            credits, text.subscribe, artwork, 700f, 30.53f, 343.16f, 95.79f, onSubscribe,
+            lightningX = 22.11f, lightningY = 29.47f,
+            lightningWidth = 29.47f, lightningHeight = 35.79f,
+            creditX = 64.21f, creditY = 24.21f, creditFontPx = 41.0526f,
+            subscribeX = 122.11f, subscribeY = 11.58f,
+            subscribeWidth = 208.42f, subscribeHeight = 73.68f,
+            subscribeLabelX = 21.05f, subscribeLabelY = 17.89f,
+            subscribeFontPx = 36.8421f
         )
 
         // Profile avatar and initial
@@ -587,7 +631,12 @@ fun PixProfileScreen(
                     .border(px(3.16f), Color(0xFF303338), CircleShape),
                 contentAlignment = Alignment.Center
             ) {
-                PixText(text.avatarInitial, 105.26f, Color.White, linePx = 123f)
+                PixText(
+                    text.avatarInitial, 105.26f, Color.White,
+                    modifier = Modifier.offset(px(62.11f), px(44.21f))
+                        .width(px(69f)).height(px(123f)),
+                    linePx = 123f
+                )
             }
         }
 
@@ -599,7 +648,12 @@ fun PixProfileScreen(
                     .then(if (onEditProfile != null) Modifier.clickable { onEditProfile() } else Modifier),
                 contentAlignment = Alignment.Center
             ) {
-                PixText(text.editProfile, 35.79f, Color(0xFFDAD8DF), FontWeight.Medium, linePx = 42f)
+                PixText(
+                    text.editProfile, 35.79f, Color(0xFFDAD8DF), FontWeight.Medium,
+                    modifier = Modifier.offset(px(44.21f), px(26.32f))
+                        .width(px(175f)).height(px(42f)),
+                    linePx = 42f
+                )
             }
         }
 
@@ -609,16 +663,18 @@ fun PixProfileScreen(
             linePx = 47f)
 
         // Profile statistics
-        Row(
-            Modifier.offset(px(43.16f), px(613.68f)).height(px(55.79f)),
-            horizontalArrangement = Arrangement.spacedBy(px(10.53f)),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            PixText(text.followingCount, 37.89f, linePx = 44f)
-            PixText(text.followingLabel, 37.89f, TextMutedDark, linePx = 44f)
-            Spacer(Modifier.width(px(14f)))
-            PixText(text.followersCount, 37.89f, linePx = 44f)
-            PixText(text.followersLabel, 37.89f, TextMutedDark, linePx = 44f)
+        FixedLayer(43.16f, 613.68f, 463.16f, 55.79f) {
+            PixText(text.followingCount, 37.89f,
+                modifier = Modifier.width(px(22f)).height(px(44f)), linePx = 44f)
+            PixText(text.followingLabel, 37.89f, TextMutedDark,
+                modifier = Modifier.offset(px(32.53f), 0.dp)
+                    .width(px(163f)).height(px(44f)), linePx = 44f)
+            PixText(text.followersCount, 37.89f,
+                modifier = Modifier.offset(px(241.05f), 0.dp)
+                    .width(px(22f)).height(px(44f)), linePx = 44f)
+            PixText(text.followersLabel, 37.89f, TextMutedDark,
+                modifier = Modifier.offset(px(273.58f), 0.dp)
+                    .width(px(164f)).height(px(44f)), linePx = 44f)
         }
 
         // Promotion cards
