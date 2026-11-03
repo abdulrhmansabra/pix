@@ -1,0 +1,2481 @@
+/* Template browsing screen */
+
+position: relative;
+width: 1080px;
+height: 2115px;
+
+background: #090A0B;
+
+
+/* Top navigation / Search */
+
+position: absolute;
+width: 1080px;
+height: 153.38px;
+left: 0px;
+top: 0px;
+
+
+
+/* Icon / Search */
+
+position: absolute;
+width: 63.47px;
+height: 63.47px;
+left: 42.31px;
+top: 50.77px;
+
+
+
+/* Search outline */
+
+position: absolute;
+width: 51.83px;
+height: 51.83px;
+left: 3.17px;
+top: 3.17px;
+
+border: 5.28893px solid #F1F2F4;
+
+
+/* Gift button */
+
+position: absolute;
+width: 102.61px;
+height: 96.26px;
+left: 570.15px;
+top: 30.68px;
+
+background: #1D1E22;
+border-radius: 34.907px;
+
+
+/* Gift artwork */
+
+position: absolute;
+width: 60.29px;
+height: 51.83px;
+left: 21.16px;
+top: 23.27px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2115.57px;
+left: -591.3px;
+top: -53.95px;
+
+background: url(.jpg);
+
+
+/* Credits and subscription */
+
+position: absolute;
+width: 344.84px;
+height: 96.26px;
+left: 700.25px;
+top: 30.68px;
+
+background: #1D1E22;
+border-radius: 49.716px;
+
+
+/* Credit lightning */
+
+position: absolute;
+width: 29.62px;
+height: 35.96px;
+left: 22.21px;
+top: 29.62px;
+
+background: #FFC34E;
+
+
+/* Credit balance */
+
+position: absolute;
+width: 47px;
+height: 48px;
+left: 64.53px;
+top: 24.33px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 41.2537px;
+line-height: 48px;
+
+color: #F8CB4C;
+
+
+
+/* Subscribe button */
+
+position: absolute;
+width: 209.44px;
+height: 74.05px;
+left: 122.7px;
+top: 11.64px;
+
+background: linear-gradient(90deg, #FF9F51 0%, #E23CA8 50%, #6D4DE8 100%);
+border-radius: 39.1381px;
+
+
+/* Subscribe label */
+
+position: absolute;
+width: 166px;
+height: 43px;
+left: 21.16px;
+top: 17.98px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 37.0225px;
+line-height: 43px;
+
+color: #F1F2F4;
+
+
+
+/* Scrollable template categories */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 17.98px;
+
+position: absolute;
+width: 1093.75px;
+height: 107.89px;
+left: 16.92px;
+top: 204.15px;
+
+
+
+/* Category / Favorite */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200.98px;
+height: 104.72px;
+
+border: 2.85602px solid #686F7E;
+border-radius: 27.5024px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Category label */
+
+width: 130px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #9DA1AD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Category / Trend */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 163.96px;
+height: 104.72px;
+
+border: 2.85602px solid #EDEEF1;
+border-radius: 27.5024px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Category label */
+
+width: 93px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Category / Casual */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 181.94px;
+height: 104.72px;
+
+border: 2.85602px solid #686F7E;
+border-radius: 27.5024px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Category label */
+
+width: 110px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #9DA1AD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Category / Night Mood */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 257.04px;
+height: 104.72px;
+
+border: 2.85602px solid #686F7E;
+border-radius: 27.5024px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Category label */
+
+width: 189px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #9DA1AD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Category / 🤖 Agent */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 217.9px;
+height: 104.72px;
+
+border: 2.85602px solid #686F7E;
+border-radius: 27.5024px;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Category label */
+
+width: 141px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #9941AA;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template card / Hidden billionaire */
+
+position: absolute;
+width: 523.6px;
+height: 804.98px;
+left: 10.58px;
+top: 350.13px;
+
+background: #272A31;
+border-radius: 44.427px;
+
+
+/* Template photograph */
+
+position: absolute;
+width: 523.6px;
+height: 698.14px;
+left: 0px;
+top: 0px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2115.57px;
+left: -10.58px;
+top: -350.13px;
+
+background: url(.png);
+
+
+/* Use template button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 523.6px;
+height: 106.84px;
+left: 0px;
+top: 698.14px;
+
+background: #272A31;
+
+
+/* Button label */
+
+width: 234px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 38.0803px;
+line-height: 45px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template caption */
+
+position: absolute;
+width: 489.76px;
+height: 105.78px;
+left: 16.92px;
+top: 581.78px;
+
+
+
+/* Template title */
+
+position: absolute;
+width: 375.51px;
+height: 100px;
+left: 0px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 50px;
+/* or 138% */
+
+color: #F1F2F4;
+
+
+
+/* Usage count */
+
+position: absolute;
+width: 118.47px;
+height: 42.31px;
+left: 370.23px;
+top: 59.24px;
+
+
+
+/* Sparkle */
+
+position: absolute;
+width: 25.39px;
+height: 25.39px;
+left: 0px;
+top: 6.35px;
+
+background: #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 6.35px;
+height: 6.35px;
+left: 21.16px;
+top: 27.5px;
+
+background: #F1F2F4;
+
+
+/* Count */
+
+position: absolute;
+width: 93px;
+height: 42px;
+left: 34.91px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #F1F2F4;
+
+
+
+/* Hot badge */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 86.74px;
+height: 49.72px;
+left: 17.98px;
+top: 17.98px;
+
+background: linear-gradient(90deg, #FF8A24 0%, #FF3F65 100%);
+border-radius: 13.7512px;
+
+
+/* Badge label */
+
+width: 47px;
+height: 27px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 23.2713px;
+line-height: 27px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template card / Motorcycle chase */
+
+position: absolute;
+width: 523.6px;
+height: 804.98px;
+left: 545.82px;
+top: 350.13px;
+
+background: #272A31;
+border-radius: 44.427px;
+
+
+/* Template photograph */
+
+position: absolute;
+width: 523.6px;
+height: 698.14px;
+left: 0px;
+top: 0px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2115.57px;
+left: -545.82px;
+top: -350.13px;
+
+background: url(.png);
+
+
+/* Use template button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 523.6px;
+height: 106.84px;
+left: 0px;
+top: 698.14px;
+
+background: #272A31;
+
+
+/* Button label */
+
+width: 234px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 38.0803px;
+line-height: 45px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template caption */
+
+position: absolute;
+width: 489.76px;
+height: 105.78px;
+left: 16.92px;
+top: 581.78px;
+
+
+
+/* Template title */
+
+position: absolute;
+width: 375.51px;
+height: 100px;
+left: 0px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 50px;
+/* or 138% */
+
+color: #F1F2F4;
+
+
+
+/* Usage count */
+
+position: absolute;
+width: 118.47px;
+height: 42.31px;
+left: 370.23px;
+top: 59.24px;
+
+
+
+/* Sparkle */
+
+position: absolute;
+width: 25.39px;
+height: 25.39px;
+left: 0px;
+top: 6.35px;
+
+background: #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 6.35px;
+height: 6.35px;
+left: 21.16px;
+top: 27.5px;
+
+background: #F1F2F4;
+
+
+/* Count */
+
+position: absolute;
+width: 73px;
+height: 42px;
+left: 34.91px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #F1F2F4;
+
+
+
+/* Template card / Battlefield */
+
+position: absolute;
+width: 523.6px;
+height: 804.98px;
+left: 10.58px;
+top: 1165.68px;
+
+background: #272A31;
+border-radius: 44.427px;
+
+
+/* Template photograph */
+
+position: absolute;
+width: 523.6px;
+height: 698.14px;
+left: 0px;
+top: 0px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2115.57px;
+left: -10.58px;
+top: -1165.68px;
+
+background: url(.png);
+
+
+/* Use template button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 523.6px;
+height: 106.84px;
+left: 0px;
+top: 698.14px;
+
+background: #272A31;
+
+
+/* Button label */
+
+width: 234px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 38.0803px;
+line-height: 45px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template caption */
+
+position: absolute;
+width: 489.76px;
+height: 105.78px;
+left: 16.92px;
+top: 581.78px;
+
+
+
+/* Template title */
+
+position: absolute;
+width: 375.51px;
+height: 100px;
+left: 0px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 50px;
+/* or 138% */
+
+color: #F1F2F4;
+
+
+
+/* Usage count */
+
+position: absolute;
+width: 118.47px;
+height: 42.31px;
+left: 370.23px;
+top: 59.24px;
+
+
+
+/* Sparkle */
+
+position: absolute;
+width: 25.39px;
+height: 25.39px;
+left: 0px;
+top: 6.35px;
+
+background: #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 6.35px;
+height: 6.35px;
+left: 21.16px;
+top: 27.5px;
+
+background: #F1F2F4;
+
+
+/* Count */
+
+position: absolute;
+width: 93px;
+height: 42px;
+left: 34.91px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #F1F2F4;
+
+
+
+/* Template card / Lion companion */
+
+position: absolute;
+width: 523.6px;
+height: 804.98px;
+left: 545.82px;
+top: 1165.68px;
+
+background: #272A31;
+border-radius: 44.427px;
+
+
+/* Template photograph */
+
+position: absolute;
+width: 523.6px;
+height: 698.14px;
+left: 0px;
+top: 0px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2115.57px;
+left: -545.82px;
+top: -1165.68px;
+
+background: url(.png);
+
+
+/* Use template button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 523.6px;
+height: 106.84px;
+left: 0px;
+top: 698.14px;
+
+background: #272A31;
+
+
+/* Button label */
+
+width: 234px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 38.0803px;
+line-height: 45px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Template caption */
+
+position: absolute;
+width: 489.76px;
+height: 105.78px;
+left: 16.92px;
+top: 581.78px;
+
+
+
+/* Template title */
+
+position: absolute;
+width: 386.09px;
+height: 50px;
+left: 0px;
+top: 53.95px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.9647px;
+line-height: 50px;
+/* identical to box height, or 138% */
+
+color: #F1F2F4;
+
+
+
+/* Usage count */
+
+position: absolute;
+width: 118.47px;
+height: 42.31px;
+left: 370.23px;
+top: 59.24px;
+
+
+
+/* Sparkle */
+
+position: absolute;
+width: 25.39px;
+height: 25.39px;
+left: 0px;
+top: 6.35px;
+
+background: #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 6.35px;
+height: 6.35px;
+left: 21.16px;
+top: 27.5px;
+
+background: #F1F2F4;
+
+
+/* Count */
+
+position: absolute;
+width: 73px;
+height: 42px;
+left: 34.91px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 35.9647px;
+line-height: 42px;
+
+color: #F1F2F4;
+
+
+
+/* Bottom navigation / Template */
+
+position: absolute;
+width: 1080px;
+height: 172.42px;
+left: 0px;
+top: 1938.92px;
+
+background: #090A0B;
+
+
+/* Navigation item / Discover */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.69px;
+
+position: absolute;
+width: 158.67px;
+height: 112.22px;
+left: 28.56px;
+top: 31.73px;
+
+
+
+/* Icon / Discover */
+
+width: 64.52px;
+height: 64.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* House outline */
+
+position: absolute;
+width: 54.85px;
+height: 52.7px;
+left: 4.3px;
+top: 4.3px;
+
+border: 5.37708px solid #F1F2F4;
+
+
+/* Navigation label */
+
+width: 115px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.618px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Template / Active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.69px;
+
+position: absolute;
+width: 158.67px;
+height: 112.22px;
+left: 245.41px;
+top: 31.73px;
+
+
+
+/* Icon / Template */
+
+width: 64.52px;
+height: 64.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Rounded tile */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 47.32px;
+height: 50.54px;
+left: 5.38px;
+top: 5.38px;
+
+background: #F1F2F4;
+border: 5.37708px solid #F1F2F4;
+border-radius: 10.7542px;
+
+
+/* Trailing page */
+
+position: absolute;
+width: 3.23px;
+height: 46.24px;
+left: 59.15px;
+top: 8.6px;
+
+border: 5.37708px solid #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 23.66px;
+height: 23.66px;
+left: 18.28px;
+top: 19.36px;
+
+background: #090A0B;
+
+
+/* Navigation label */
+
+width: 124px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.618px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Inbox */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.69px;
+
+position: absolute;
+width: 158.67px;
+height: 112.22px;
+left: 676.98px;
+top: 31.73px;
+
+
+
+/* Icon / Inbox */
+
+width: 64.52px;
+height: 64.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Speech bubble */
+
+position: absolute;
+width: 53.77px;
+height: 52.7px;
+left: 4.3px;
+top: 5.38px;
+
+border: 5.37708px solid #F1F2F4;
+
+
+/* Navigation label */
+
+width: 73px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.618px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Mine */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.69px;
+
+position: absolute;
+width: 158.67px;
+height: 112.22px;
+left: 891.71px;
+top: 31.73px;
+
+
+
+/* Icon / Mine */
+
+width: 64.52px;
+height: 64.52px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Head */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 23.66px;
+height: 23.66px;
+left: 21.51px;
+top: 3.23px;
+
+border: 4.23115px solid #F1F2F4;
+
+
+/* Shoulders */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 50.54px;
+height: 20.43px;
+left: 7.53px;
+top: 36.56px;
+
+border: 4.23115px solid #F1F2F4;
+
+
+/* Navigation label */
+
+width: 66px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.618px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Create button */
+
+position: absolute;
+width: 114.24px;
+height: 114.24px;
+left: 483.41px;
+top: 27.5px;
+
+background: linear-gradient(90deg, #FF9F51 0%, #E23CA8 50%, #6D4DE8 100%);
+border-radius: 57.1205px;
+
+
+/* Plus */
+
+position: absolute;
+width: 35.96px;
+height: 35.96px;
+left: 39.14px;
+top: 39.14px;
+
+border: 6.34672px solid #FFFFFF;
+
+
+/* Profile screen */
+
+position: relative;
+width: 1080px;
+height: 2106px;
+
+background: #090A0B;
+
+
+/* Subtle profile header glow */
+
+position: absolute;
+width: 1080px;
+height: 589.47px;
+left: 0px;
+top: 0px;
+
+background: radial-gradient(90.91% 100% at 76.36% 0%, rgba(43, 20, 38, 0.72) 0%, rgba(9, 10, 11, 0) 100%);
+
+
+/* Top navigation / Profile */
+
+position: absolute;
+width: 1080px;
+height: 152.63px;
+left: 0px;
+top: 0px;
+
+
+
+/* Icon / Settings */
+
+position: absolute;
+width: 63.16px;
+height: 63.16px;
+left: 42.11px;
+top: 50.53px;
+
+
+
+/* Hexagon and center */
+
+position: absolute;
+width: 56.84px;
+height: 53.68px;
+left: 3.16px;
+top: 3.16px;
+
+border: 5.26316px solid #F1F2F4;
+
+
+/* Gift button */
+
+position: absolute;
+width: 102.11px;
+height: 95.79px;
+left: 570.53px;
+top: 30.53px;
+
+background: #1D1E22;
+border-radius: 34.7368px;
+
+
+/* Gift artwork */
+
+position: absolute;
+width: 60px;
+height: 51.58px;
+left: 21.05px;
+top: 23.16px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2105.26px;
+left: -591.58px;
+top: -53.68px;
+
+background: url(.jpg);
+
+
+/* Credits and subscription */
+
+position: absolute;
+width: 343.16px;
+height: 95.79px;
+left: 700px;
+top: 30.53px;
+
+background: #1D1E22;
+border-radius: 49.4737px;
+
+
+/* Credit lightning */
+
+position: absolute;
+width: 29.47px;
+height: 35.79px;
+left: 22.11px;
+top: 29.47px;
+
+background: #FFC34E;
+
+
+/* Credit balance */
+
+position: absolute;
+width: 47px;
+height: 48px;
+left: 64.21px;
+top: 24.21px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 41.0526px;
+line-height: 48px;
+
+color: #F8CB4C;
+
+
+
+/* Subscribe button */
+
+position: absolute;
+width: 208.42px;
+height: 73.68px;
+left: 122.11px;
+top: 11.58px;
+
+background: linear-gradient(90deg, #FF9F51 0%, #E23CA8 50%, #6D4DE8 100%);
+border-radius: 38.9474px;
+
+
+/* Subscribe label */
+
+position: absolute;
+width: 165px;
+height: 43px;
+left: 21.05px;
+top: 17.89px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 36.8421px;
+line-height: 43px;
+
+color: #F1F2F4;
+
+
+
+/* Profile avatar */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 200px;
+height: 200px;
+left: 43.16px;
+top: 181.05px;
+
+background: #EE387D;
+border: 3.15789px solid #303338;
+border-radius: 100px;
+
+
+/* Avatar initial */
+
+position: absolute;
+width: 69px;
+height: 123px;
+left: 62.11px;
+top: 44.21px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 105.263px;
+line-height: 123px;
+
+color: #FFFFFF;
+
+
+
+/* Edit profile button */
+
+position: absolute;
+width: 266.32px;
+height: 90.53px;
+left: 791.58px;
+top: 235.79px;
+
+background: #302A36;
+border-radius: 33.6842px;
+
+
+/* Edit profile label */
+
+position: absolute;
+width: 175px;
+height: 42px;
+left: 44.21px;
+top: 26.32px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.7895px;
+line-height: 42px;
+/* identical to box height */
+
+color: #DAD8DF;
+
+
+
+/* Display name */
+
+position: absolute;
+width: 556px;
+height: 83px;
+left: 42.11px;
+top: 412.63px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 71.0526px;
+line-height: 83px;
+
+color: #F1F2F4;
+
+
+
+/* Profile handle */
+
+position: absolute;
+width: 348px;
+height: 47px;
+left: 43.16px;
+top: 503.16px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 47px;
+/* identical to box height */
+
+color: #686E7B;
+
+
+
+/* Profile statistics */
+
+position: absolute;
+width: 463.16px;
+height: 55.79px;
+left: 43.16px;
+top: 613.68px;
+
+
+
+/* Following */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10.53px;
+
+position: absolute;
+width: 195.53px;
+height: 52.63px;
+left: 0px;
+top: 0px;
+
+
+
+/* Following count */
+
+width: 22px;
+height: 44px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 37.8947px;
+line-height: 44px;
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Following label */
+
+width: 163px;
+height: 44px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 37.8947px;
+line-height: 44px;
+
+color: #686E7B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Followers */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10.53px;
+
+position: absolute;
+width: 196.53px;
+height: 52.63px;
+left: 241.05px;
+top: 0px;
+
+
+
+/* Follower count */
+
+width: 22px;
+height: 44px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 37.8947px;
+line-height: 44px;
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Followers label */
+
+width: 164px;
+height: 44px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 37.8947px;
+line-height: 44px;
+
+color: #686E7B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Promotion cards */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 11.58px;
+
+position: absolute;
+width: 1046.32px;
+height: 180px;
+left: 16.84px;
+top: 716.84px;
+
+
+
+/* Subscription promotion */
+
+width: 517.89px;
+height: 180px;
+
+background: linear-gradient(90deg, #FF9F51 0%, #E23CA8 50%, #6D4DE8 100%);
+border-radius: 46.3158px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Promotion title */
+
+position: absolute;
+width: 291px;
+height: 57px;
+left: 32.63px;
+top: 45.26px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 48.4211px;
+line-height: 57px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Promotion subtitle */
+
+position: absolute;
+width: 306px;
+height: 35px;
+left: 32.63px;
+top: 105.26px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F4C4DA;
+
+
+
+/* Gem artwork */
+
+position: absolute;
+width: 98.95px;
+height: 102.11px;
+left: 385.26px;
+top: 42.11px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2105.26px;
+left: -402.11px;
+top: -758.95px;
+
+background: url(.jpg);
+
+
+/* Invite friends promotion */
+
+width: 516.84px;
+height: 180px;
+
+background: linear-gradient(90deg, #3A2719 0%, #35172D 100%);
+border-radius: 46.3158px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Invite title */
+
+position: absolute;
+width: 296px;
+height: 57px;
+left: 32.63px;
+top: 45.26px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 48.4211px;
+line-height: 57px;
+/* identical to box height */
+
+background: linear-gradient(90deg, #FF995F 0%, #DF43A8 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
+
+
+/* Invite subtitle */
+
+position: absolute;
+width: 235px;
+height: 35px;
+left: 32.63px;
+top: 105.26px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #B4A8A8;
+
+
+
+/* Gift artwork */
+
+position: absolute;
+width: 92.63px;
+height: 84.21px;
+left: 385.26px;
+top: 47.37px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2105.26px;
+left: -931.58px;
+top: -764.21px;
+
+background: url(.jpg);
+
+
+/* Content navigation */
+
+position: absolute;
+width: 1080px;
+height: 109.47px;
+left: 0px;
+top: 920px;
+
+
+
+/* Private creations tab */
+
+position: absolute;
+width: 540px;
+height: 109.47px;
+left: 0px;
+top: 0px;
+
+
+
+/* Private folder */
+
+position: absolute;
+width: 50.53px;
+height: 48.42px;
+left: 243.16px;
+top: 16.84px;
+
+border: 4.21053px solid #F1F2F4;
+
+
+/* Lock */
+
+position: absolute;
+width: 16.84px;
+height: 18.95px;
+left: 278.95px;
+top: 46.32px;
+
+border: 4.21053px solid #F1F2F4;
+
+
+/* Active underline */
+
+position: absolute;
+width: 540px;
+height: 3.16px;
+left: 0px;
+top: 106.32px;
+
+background: #D8DADD;
+
+
+/* Collection tab */
+
+position: absolute;
+width: 540px;
+height: 109.47px;
+left: 540px;
+top: 0px;
+
+
+
+/* Collection grid */
+
+position: absolute;
+width: 47.37px;
+height: 46.32px;
+left: 246.32px;
+top: 17.89px;
+
+border: 4.21053px solid #686F7F;
+
+
+/* Inactive divider */
+
+position: absolute;
+width: 540px;
+height: 3.16px;
+left: 0px;
+top: 106.32px;
+
+background: #25282D;
+
+
+/* Media type filters */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 17.89px;
+
+position: absolute;
+width: 541.05px;
+height: 98.95px;
+left: 16.84px;
+top: 1060px;
+
+
+
+/* Media filter / Video */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 163.16px;
+height: 97.89px;
+
+border: 2.84211px solid #E5E6E9;
+border-radius: 28.4211px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Filter label */
+
+width: 92px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.7895px;
+line-height: 42px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Media filter / Image */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 171.58px;
+height: 97.89px;
+
+border: 2.84211px solid #999EAB;
+border-radius: 28.4211px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Filter label */
+
+width: 101px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.7895px;
+line-height: 42px;
+/* identical to box height */
+
+color: #9DA1AD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Media filter / Agent */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 170.53px;
+height: 97.89px;
+
+border: 2.84211px solid #999EAB;
+border-radius: 28.4211px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Filter label */
+
+width: 96px;
+height: 42px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 35.7895px;
+line-height: 42px;
+/* identical to box height */
+
+color: #9DA1AD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Video thumbnail / Mountain pilot */
+
+position: absolute;
+width: 353.68px;
+height: 441.05px;
+left: 0px;
+top: 1193.68px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2105.26px;
+left: 0px;
+top: -1193.68px;
+
+background: url(.jpg);
+
+
+/* Video thumbnail / Cinematic street */
+
+position: absolute;
+width: 353.68px;
+height: 441.05px;
+left: 363.16px;
+top: 1193.68px;
+
+
+
+/* Original image crop */
+
+position: absolute;
+width: 1080px;
+height: 2105.26px;
+left: -363.16px;
+top: -1193.68px;
+
+background: url(.jpg);
+
+
+/* Bottom navigation / Profile */
+
+position: absolute;
+width: 1080px;
+height: 171.58px;
+left: 0px;
+top: 1933.68px;
+
+background: #090A0B;
+
+
+/* Navigation item / Discover */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.63px;
+
+position: absolute;
+width: 157.89px;
+height: 111.84px;
+left: 28.42px;
+top: 31.58px;
+
+
+
+/* Icon / Discover */
+
+width: 64.21px;
+height: 64.21px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* House outline */
+
+position: absolute;
+width: 54.58px;
+height: 52.44px;
+left: 4.28px;
+top: 4.28px;
+
+border: 5.35088px solid #F1F2F4;
+
+
+/* Navigation label */
+
+width: 114px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Template */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.63px;
+
+position: absolute;
+width: 157.89px;
+height: 111.84px;
+left: 244.21px;
+top: 31.58px;
+
+
+
+/* Icon / Template */
+
+width: 64.21px;
+height: 64.21px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Rounded tile */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 47.09px;
+height: 50.3px;
+left: 5.35px;
+top: 5.35px;
+
+border: 5.35088px solid #F1F2F4;
+border-radius: 10.7018px;
+
+
+/* Trailing page */
+
+position: absolute;
+width: 3.21px;
+height: 46.02px;
+left: 58.86px;
+top: 8.56px;
+
+border: 5.35088px solid #F1F2F4;
+
+
+/* Sparkle */
+
+position: absolute;
+width: 23.54px;
+height: 23.54px;
+left: 18.19px;
+top: 19.26px;
+
+background: #F1F2F4;
+
+
+/* Navigation label */
+
+width: 123px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Inbox */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.63px;
+
+position: absolute;
+width: 157.89px;
+height: 111.84px;
+left: 676.84px;
+top: 31.58px;
+
+
+
+/* Icon / Inbox */
+
+width: 64.21px;
+height: 64.21px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Speech bubble */
+
+position: absolute;
+width: 53.51px;
+height: 52.44px;
+left: 4.28px;
+top: 5.35px;
+
+border: 5.35088px solid #F1F2F4;
+
+
+/* Navigation label */
+
+width: 73px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navigation item / Mine / Active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12.63px;
+
+position: absolute;
+width: 157.89px;
+height: 111.84px;
+left: 892.63px;
+top: 31.58px;
+
+
+
+/* Icon / Mine */
+
+width: 64.21px;
+height: 64.21px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Head */
+
+position: absolute;
+width: 23.54px;
+height: 23.54px;
+left: 21.4px;
+top: 4.28px;
+
+background: #F1F2F4;
+
+
+/* Shoulders */
+
+position: absolute;
+width: 50.3px;
+height: 20.33px;
+left: 7.49px;
+top: 36.39px;
+
+background: #F1F2F4;
+
+
+/* Navigation label */
+
+width: 65px;
+height: 35px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 29.4737px;
+line-height: 35px;
+/* identical to box height */
+
+color: #F1F2F4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Create button */
+
+position: absolute;
+width: 113.68px;
+height: 113.68px;
+left: 483.16px;
+top: 27.37px;
+
+background: linear-gradient(90deg, #FF9F51 0%, #E23CA8 50%, #6D4DE8 100%);
+border-radius: 56.8421px;
+
+
+/* Plus */
+
+position: absolute;
+width: 35.79px;
+height: 35.79px;
+left: 38.95px;
+top: 38.95px;
+
+border: 6.31579px solid #FFFFFF;
