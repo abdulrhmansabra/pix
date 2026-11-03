@@ -5,7 +5,7 @@
   },
   "extractionStatus": {
     "css": "Read and measured; CSS layer names and coordinates are the source of truth.",
-    "svg": "The v2 structural inventory is available. tools/export_svg_artwork.py now provides a local byte-preserving raster extraction and full-frame reference export; generated image files have not yet been created from the original source, and component-level SVG-to-CSS bindings remain unverified."
+    "svg": "Original SVG source is available and the verified component exporter produces source-derived crops. 25 SVG artwork crops have been rendered and mapped into PixArtwork Painter slots; raster files are supplied as a drawable-nodpi resource pack."
   },
   "coordinateSystem": {
     "frameWidthPx": 1080,
@@ -108,6 +108,29 @@
       "manifest.json"
     ],
     "status": "Exporter added; source assets are generated locally and are not committed by this change.",
-    "bindingStatus": "Full-frame references and raw embedded images are not individual PixArtwork slots. Component-level binding requires verified SVG subtree and crop mapping."
+    "bindingStatus": "PixScreens.kt consumes screen-specific gift-action and credit-lightning painters plus the original Agent robot artwork. PixArtworkResources.kt loads the named drawable-nodpi resources. Copy the supplied WebP files to the Android app resources before calling rememberPixArtwork().",
+    "componentTool": "tools/export_pix_components.py",
+    "componentOutputDirectory": "generated/pix-artwork",
+    "componentAssets": 25,
+    "componentFormats": [
+      "PNG",
+      "lossless WebP"
+    ],
+    "originalSourceFilesModified": false,
+    "validationBoundary": "Source node selection and raster crops are verified against the original full-frame SVG renders. Android resource compilation and on-device Compose screenshot parity are not verified in this repository because it has no Gradle app module."
+  },
+  "componentArtwork": {
+    "Template card photos": "pix_template_photo_01; pix_template_photo_02; pix_template_photo_03; pix_template_photo_04",
+    "Profile thumbnails": "pix_profile_photo_01; pix_profile_photo_02",
+    "Template header action": "pix_template_gift_action",
+    "Profile header gift": "pix_profile_gift_action",
+    "Search": "pix_search",
+    "Settings": "pix_settings",
+    "Credit lightning": "pix_credit_lightning_template; pix_credit_lightning_profile",
+    "Agent category icon": "pix_agent_category",
+    "Navigation": "pix_nav_discover; pix_nav_templates; pix_nav_templates_active; pix_nav_inbox; pix_nav_profile; pix_nav_profile_active",
+    "Usage sparkle": "pix_usage_sparkle",
+    "Profile tabs": "pix_private_folder; pix_private_lock; pix_collection_grid",
+    "Promotion art": "pix_promotion_gem; pix_invite_gift"
   }
 }
