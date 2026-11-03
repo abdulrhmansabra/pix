@@ -1,7 +1,13 @@
 import unittest
 import xml.etree.ElementTree as ET
 
-from tools.export_pix_components import clone_branch, clip_viewbox
+from PIL import Image
+
+from tools.export_pix_components import (
+    clone_branch,
+    clip_viewbox,
+    make_black_counters_transparent,
+)
 
 
 class ExportPixComponentsTests(unittest.TestCase):
@@ -22,6 +28,19 @@ class ExportPixComponentsTests(unittest.TestCase):
         result = clone_branch(root, (0, 0), [0])
         ids = [node.get("id") for node in result.iter() if node.get("id")]
         self.assertEqual(ids, ["screen", "icon", "shape"])
+
+
+    def test_black_counter_pixels_become_transparent_without_touching_artwork(self):
+        image = Image.new("RGBA", (3, 1))
+        image.putdata([
+            (0, 0, 0, 255),
+            (241, 242, 244, 255),
+            (0, 0, 0, 0),
+        ])
+        result = make_black_counters_transparent(image)
+        self.assertEqual(result.getpixel((0, 0)), (0, 0, 0, 0))
+        self.assertEqual(result.getpixel((1, 0)), (241, 242, 244, 255))
+        self.assertEqual(result.getpixel((2, 0)), (0, 0, 0, 0))
 
     def test_remove_masks_only_from_exported_copy(self):
         root = ET.fromstring(
