@@ -27,7 +27,7 @@ class ExportSvgArtworkTests(unittest.TestCase):
     def test_base64_whitespace_is_ignored(self):
         original = b"embedded-payload"
         encoded = base64.b64encode(original).decode("ascii")
-        wrapped = encoded[:5] + "\\n  " + encoded[5:]
+        wrapped = encoded[:5] + "\n  " + encoded[5:]
         mime, payload = parse_data_uri("data:image/png;base64," + wrapped)
         self.assertEqual(mime, "image/png")
         self.assertEqual(payload, original)
