@@ -1,0 +1,686 @@
+{
+  "sourceFile": "pix.svg",
+  "sourceBytes": 3675052,
+  "root": {
+    "tag": "svg",
+    "viewBox": "0 0 2280 2115",
+    "width": "2280",
+    "height": "2115"
+  },
+  "elementCounts": {
+    "circle": 1,
+    "clipPath": 38,
+    "defs": 1,
+    "ellipse": 1,
+    "g": 38,
+    "image": 4,
+    "linearGradient": 8,
+    "mask": 1,
+    "path": 75,
+    "pattern": 10,
+    "radialGradient": 1,
+    "rect": 85,
+    "stop": 23,
+    "svg": 1,
+    "use": 11
+  },
+  "idCount": 62,
+  "ids": [
+    {
+      "id": "stroke0_0_1",
+      "tag": "mask",
+      "label": null
+    },
+    {
+      "id": "pattern0_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern1_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern2_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern3_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern4_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern5_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern6_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern7_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern8_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "pattern9_0_1",
+      "tag": "pattern",
+      "label": null
+    },
+    {
+      "id": "paint0_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint1_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint2_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint3_radial_0_1",
+      "tag": "radialGradient",
+      "label": null
+    },
+    {
+      "id": "paint4_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint5_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint6_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint7_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "paint8_linear_0_1",
+      "tag": "linearGradient",
+      "label": null
+    },
+    {
+      "id": "clip0_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip1_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip2_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip3_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip4_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip5_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip6_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip7_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip8_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip9_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip10_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip11_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip12_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip13_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip14_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip15_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip16_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip17_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip18_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip19_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip20_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip21_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip22_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip23_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip24_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip25_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip26_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip27_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip28_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip29_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip30_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip31_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip32_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip33_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip34_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip35_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip36_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "clip37_0_1",
+      "tag": "clipPath",
+      "label": null
+    },
+    {
+      "id": "image0_0_1",
+      "tag": "image",
+      "label": null
+    },
+    {
+      "id": "image1_0_1",
+      "tag": "image",
+      "label": null
+    },
+    {
+      "id": "image2_0_1",
+      "tag": "image",
+      "label": null
+    },
+    {
+      "id": "image3_0_1",
+      "tag": "image",
+      "label": null
+    }
+  ],
+  "namedGroups": [],
+  "textNodes": [],
+  "images": [
+    {
+      "id": "image0_0_1",
+      "hrefType": "embedded-data",
+      "mimeType": "image/jpeg",
+      "payloadCharacters": 624012,
+      "x": null,
+      "y": null,
+      "width": "1080",
+      "height": "2115",
+      "preserveAspectRatio": "none"
+    },
+    {
+      "id": "image1_0_1",
+      "hrefType": "embedded-data",
+      "mimeType": "image/png",
+      "payloadCharacters": 36468,
+      "x": null,
+      "y": null,
+      "width": "160",
+      "height": "160",
+      "preserveAspectRatio": "none"
+    },
+    {
+      "id": "image2_0_1",
+      "hrefType": "embedded-data",
+      "mimeType": "image/png",
+      "payloadCharacters": 2227080,
+      "x": null,
+      "y": null,
+      "width": "1080",
+      "height": "2115",
+      "preserveAspectRatio": "none"
+    },
+    {
+      "id": "image3_0_1",
+      "hrefType": "embedded-data",
+      "mimeType": "image/jpeg",
+      "payloadCharacters": 353452,
+      "x": null,
+      "y": null,
+      "width": "1080",
+      "height": "2106",
+      "preserveAspectRatio": "none"
+    }
+  ],
+  "effects": [
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip0_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip1_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip2_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip3_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip4_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip5_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip6_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip7_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip8_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip9_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip10_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip11_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip12_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip13_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip14_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip15_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip16_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip17_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip18_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip19_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "path",
+      "kind": "mask",
+      "value": "url(#stroke0_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip20_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip21_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip22_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip23_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip24_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip25_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip26_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip27_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip28_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip29_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip30_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip31_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip32_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip33_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip34_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip35_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip36_0_1)"
+    },
+    {
+      "id": null,
+      "tag": "g",
+      "kind": "clip-path",
+      "value": "url(#clip37_0_1)"
+    }
+  ],
+  "internalReferences": [
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image1_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image0_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image2_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image2_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image2_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image2_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image3_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image3_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image3_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image3_0_1"
+    },
+    {
+      "from": "use",
+      "attribute": "href",
+      "target": "image3_0_1"
+    }
+  ],
+  "notes": [
+    "This is a structural inventory, not a visual or pixel-parity validation.",
+    "Review image crops, masks, clipping paths, filters, and referenced definitions before exporting artwork.",
+    "The source SVG is read-only; this report does not modify it."
+  ]
+}
