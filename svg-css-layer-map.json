@@ -5,7 +5,7 @@
   },
   "extractionStatus": {
     "css": "Read and measured; CSS layer names and coordinates are the source of truth.",
-    "svg": "The repository connector could not return the 3.6 MB SVG body. No vector path or embedded image has been guessed or redrawn."
+    "svg": "The v2 structural inventory is available. tools/export_svg_artwork.py now provides a local byte-preserving raster extraction and full-frame reference export; generated image files have not yet been created from the original source, and component-level SVG-to-CSS bindings remain unverified."
   },
   "coordinateSystem": {
     "frameWidthPx": 1080,
@@ -15,13 +15,25 @@
         "name": "Template browsing",
         "widthPx": 1080,
         "heightPx": 2115,
-        "heightDp": 705
+        "heightDp": 705,
+        "svgViewport": {
+          "x": 1200,
+          "y": 0,
+          "width": 1080,
+          "height": 2115
+        }
       },
       {
         "name": "Profile",
         "widthPx": 1080,
         "heightPx": 2106,
-        "heightDp": 702
+        "heightDp": 702,
+        "svgViewport": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 2106
+        }
       }
     ]
   },
@@ -85,5 +97,17 @@
       "Navigation item / Inbox / Active": "inboxActive",
       "Navigation item / Mine / Active": "profileActive"
     }
+  },
+  "sourceExport": {
+    "tool": "tools/export_svg_artwork.py",
+    "outputDirectory": "generated/svg-artwork",
+    "outputs": [
+      "template-browsing.png",
+      "profile.png",
+      "embedded/",
+      "manifest.json"
+    ],
+    "status": "Exporter added; source assets are generated locally and are not committed by this change.",
+    "bindingStatus": "Full-frame references and raw embedded images are not individual PixArtwork slots. Component-level binding requires verified SVG subtree and crop mapping."
   }
 }
