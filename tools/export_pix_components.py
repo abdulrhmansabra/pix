@@ -28,6 +28,19 @@ def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
 
+def make_black_counters_transparent(image: Image.Image) -> Image.Image:
+    """Turn pure-black counter pixels transparent on selected line-art icons."""
+    if image.mode != "RGBA":
+        image = image.convert("RGBA")
+    pixels = image.load()
+    for y in range(image.height):
+        for x in range(image.width):
+            red, green, blue, alpha = pixels[x, y]
+            if alpha and red == 0 and green == 0 and blue == 0:
+                pixels[x, y] = (0, 0, 0, 0)
+    return image
+
+
 def node_at(root: ET.Element, path: tuple[int, ...]) -> ET.Element:
     node = root
     for index in path:
@@ -113,12 +126,7 @@ class Exporter:
         # background, so the verified icon exports make pure-black counter
         # pixels transparent. This is applied only to explicitly selected icons.
         if transparent_black:
-            pixels = image.load()
-            for py in range(image.height):
-                for px in range(image.width):
-                    red, green, blue, alpha = pixels[px, py]
-                    if alpha and red == 0 and green == 0 and blue == 0:
-                        pixels[px, py] = (0, 0, 0, 0)
+            image = make_black_counters_transparent(image)
         bounds = image.getchannel("A").getbbox()
         if trim and bounds:
             image = image.crop(bounds)
