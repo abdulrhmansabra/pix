@@ -174,6 +174,7 @@ class Exporter:
                 "Template photo crops preserve source composition exactly, including partial adjacent image content where present.",
                 "Navigation labels and other dynamic text are not part of the icon resources.",
                 "All WebP files are lossless encodings of their exported PNG pixels.",
+                "For nav_profile only, the mask reference is omitted in the exported copy because CairoSVG output otherwise differs from the full-frame source rendering; the source SVG is not changed.",
                 "The original pix.svg and pix.css are read-only inputs."
             ]
         }
