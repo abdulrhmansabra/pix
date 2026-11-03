@@ -29,6 +29,16 @@ The screen geometry, layout positions, colors, gradients, borders, radii and tex
 
 Use `COMPOSE_IMPLEMENTATION.md` for integration and the required text/artwork inputs. `svg-css-layer-map.json` records the CSS-layer-to-PixArtwork-slot mapping.
 
+### Stage 3 — Exact SVG structure inventory
+
+Run locally (the original SVG is large and must be parsed from the repository checkout):
+
+```bash
+python tools/inspect_svg.py pix.svg --out generated/svg-inspection.json
+```
+
+The read-only inspector records actual element IDs, named groups, text nodes, embedded/external images, image dimensions, clip paths, masks, filters, and internal references. See `SVG_INSPECTION.md` for the mapping and export sequence. It does not modify the SVG or create substitute artwork.
+
 ## SVG accuracy boundary
 
 The connector could not return the 3.6 MB `pix.svg` body for inspection. Consequently, the actual SVG group IDs, vector paths, photo crops, masks and embedded raster assets have **not** been verified in this implementation. There are no substitute drawings or invented photos: the Compose screens accept the original artwork as `Painter` inputs through `PixArtwork`. A missing painter leaves that specific art slot empty.
