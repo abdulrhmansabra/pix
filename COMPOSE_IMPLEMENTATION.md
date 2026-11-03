@@ -85,3 +85,46 @@ Important:
 - Individual component painters remain unbound until their exact SVG subtree, referenced definitions, crop, and transform chain have been verified.
 
 This first-pass export intentionally leaves `PixScreens.kt` unchanged. It does not claim pixel parity or alter the existing screen layout.
+
+
+## Verified SVG artwork binding
+
+The file compose/PixArtworkResources.kt provides rememberPixArtwork(), which loads the source-derived Painter resources into PixArtwork. compose/PixScreens.kt now distinguishes screen-specific header artwork and uses the original Agent robot image instead of the emoji approximation.
+
+Export the assets from the original SVG:
+
+```bash
+python -m pip install CairoSVG Pillow
+python tools/export_pix_components.py pix.svg --out generated/pix-artwork
+```
+
+Copy the generated .webp files into the Android app's app/src/main/res/drawable-nodpi/ folder. Keep their filenames unchanged. Then call:
+
+```kotlin
+PixTemplateBrowsingScreen(
+    text = templateText,
+    credits = credits,
+    templates = templates,
+    artwork = rememberPixArtwork()
+)
+
+PixProfileScreen(
+    text = profileText,
+    credits = credits,
+    artwork = rememberPixArtwork()
+)
+```
+
+The R import in PixArtworkResources.kt assumes the app namespace is com.example.pix. Change that import to the app's generated R package if its namespace differs. This repository does not contain a Gradle Android application module, so Android resource compilation remains an integration step in the consuming app.
+
+### Verified exported components
+
+The component exporter maps actual SVG subtrees and source clip paths to these assets: search, both header action artworks, both credit lightning variants, settings, Agent robot, four template-card photo crops, two profile thumbnails, discover/template/inbox/profile navigation icons and the visible active variants, usage sparkle, private folder, lock, collection grid, promotion gem, and invite gift.
+
+The exported photo crops retain their original SVG pattern and clipping behavior. Some contain partial adjacent-image content because that is present in the source SVG crop; it has not been removed or redesigned. Labels and dynamic text remain Compose text. The inactive Mine icon export is rendered to match the original full-frame screenshot because CairoSVG's rendering of its embedded mask differs; the original pix.svg is not altered.
+
+The exporter creates lossless WebP copies of all 25 raster crops and writes a manifest containing the exact source SVG SHA-256, SVG node paths, source clip paths, dimensions, and asset hashes. The WebP files are also provided as a ready-to-copy drawable-nodpi resource pack in the conversation attachment.
+
+### Validation boundary
+
+The crops were rendered from the actual SVG source tree and visually checked against the full-frame renders. This verifies extraction provenance and crop selection, but it is not a claim of pixel-perfect Compose parity. Android resource loading and final on-device screenshot comparison must still be performed in the consuming app.
