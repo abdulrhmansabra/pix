@@ -23,7 +23,7 @@ INKSCAPE = "{http://www.inkscape.org/namespaces/inkscape}label"
 XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
 NUMBER = re.compile(r"[-+]?(?:\d*\.\d+|\d+\.?\d*)(?:[eE][-+]?\d+)?")
 TRANSFORM = re.compile(r"([A-Za-z]+)\s*\(([^)]*)\)")
-URL_REF = re.compile(r"url\(\s*['\"]?#([^\s)'"]+)['\"]?\s*\)")
+URL_REF = re.compile(r"""url\(\s*['\"]?#([^\s)'"]+)['\"]?\s*\)""")
 
 # Affine matrix [a, b, c, d, e, f]: x'=a*x+c*y+e; y'=b*x+d*y+f.
 IDENTITY = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
