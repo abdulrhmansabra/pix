@@ -45,7 +45,7 @@ def parse_data_uri(uri: str) -> tuple[str, bytes]:
     mime_type = parts[0].strip().lower() or "application/octet-stream"
     if "base64" in {part.strip().lower() for part in parts[1:]}:
         # SVG exporters may wrap base64 data URIs across lines. Whitespace is not payload.
-        payload = re.sub(r"\\s+", "", payload)
+        payload = re.sub(r"\s+", "", payload)
         try:
             content = base64.b64decode(payload, validate=True)
         except Exception as exc:
