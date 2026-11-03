@@ -56,6 +56,8 @@ The output includes the four template-photo crops, two profile-photo crops, dist
 
 For Android, copy only the .webp files to app/src/main/res/drawable-nodpi and preserve their filenames. Use compose/PixArtworkResources.kt to load them into PixArtwork. See COMPOSE_IMPLEMENTATION.md for the R namespace note and the call sites.
 
+The navigation icon exports keep their original 64px SVG icon-slot viewport, including transparent inset; this prevents the Compose Painter box from enlarging the visible line art. Selected line-art icons also convert pure-black counter pixels to transparency so the actual #090A0B screen background shows through, as it does in the full-frame source rendering. This affects only the exported PNG/WebP copies, not pix.svg.
+
 The inactive Mine icon is a special case: its inline SVG mask is interpreted differently by CairoSVG than in the original full-frame render. The exporter removes that mask reference only in the exported icon subtree, matching the visible outlined head-and-shoulders icon in the supplied source render. The original SVG remains unchanged.
 
 This export stage validates component source selection and preserves the actual image crops. It does not claim Android screenshot pixel parity; the consuming app still needs to load the resources and compare its rendered screens against the source full-frame references.
