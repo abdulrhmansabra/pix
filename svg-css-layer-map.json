@@ -49,7 +49,14 @@
       "templates",
       "inbox",
       "profile"
-    ]
+    ],
+    "Usage sparkle": "usageSparkle",
+    "Bottom navigation active variants": {
+      "Navigation item / Discover / Active": "discoverActive",
+      "Navigation item / Template / Active": "templatesActive",
+      "Navigation item / Inbox / Active": "inboxActive",
+      "Navigation item / Mine / Active": "profileActive"
+    }
   },
   "profileScreen": {
     "Subtle profile header glow": "Compose radial gradient using the CSS stops",
@@ -71,6 +78,12 @@
       "templates",
       "inbox",
       "profile"
-    ]
+    ],
+    "Bottom navigation active variants": {
+      "Navigation item / Discover / Active": "discoverActive",
+      "Navigation item / Template / Active": "templatesActive",
+      "Navigation item / Inbox / Active": "inboxActive",
+      "Navigation item / Mine / Active": "profileActive"
+    }
   }
 }
