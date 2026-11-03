@@ -107,7 +107,7 @@
       "embedded/",
       "manifest.json"
     ],
-    "status": "Exporter added; source assets are generated locally and are not committed by this change.",
+    "status": "The first-pass and component exporters are implemented. 25 verified component crops were generated from the uploaded original SVG and supplied in a drawable-nodpi WebP resource pack; binary assets are not committed to the repository.",
     "bindingStatus": "PixScreens.kt consumes screen-specific gift-action and credit-lightning painters plus the original Agent robot artwork. PixArtworkResources.kt loads the named drawable-nodpi resources. Copy the supplied WebP files to the Android app resources before calling rememberPixArtwork().",
     "componentTool": "tools/export_pix_components.py",
     "componentOutputDirectory": "generated/pix-artwork",
