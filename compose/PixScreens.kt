@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -63,6 +64,10 @@ data class PixArtwork(
     val templates: Painter? = null,
     val inbox: Painter? = null,
     val profile: Painter? = null,
+    val discoverActive: Painter? = null,
+    val templatesActive: Painter? = null,
+    val inboxActive: Painter? = null,
+    val profileActive: Painter? = null,
     val privateFolder: Painter? = null,
     val privateLock: Painter? = null,
     val collectionGrid: Painter? = null,
@@ -137,6 +142,7 @@ private fun PixFrame(
             Box(
                 Modifier
                     .requiredSize(360.dp, designHeight)
+                    .clipToBounds()
                     .graphicsLayer {
                         scaleX = fitScale
                         scaleY = fitScale
@@ -261,12 +267,16 @@ private fun PixBottomNav(
     onProfile: (() -> Unit)?,
     onCreate: (() -> Unit)?
 ) {
+    val discoverIcon = if (selected == "Discover") artwork.discoverActive ?: artwork.discover else artwork.discover
+    val templatesIcon = if (selected == "Template") artwork.templatesActive ?: artwork.templates else artwork.templates
+    val inboxIcon = if (selected == "Inbox") artwork.inboxActive ?: artwork.inbox else artwork.inbox
+    val profileIcon = if (selected == "Mine") artwork.profileActive ?: artwork.profile else artwork.profile
     FixedLayer(0f, top, 1080f, height) {
         Box(Modifier.fillMaxSize().background(Bg))
-        PixBottomItem("Discover", artwork.discover, 28.42f, onDiscover)
-        PixBottomItem("Template", artwork.templates, 244.21f, onTemplates)
-        PixBottomItem("Inbox", artwork.inbox, 676.84f, onInbox)
-        PixBottomItem("Mine", artwork.profile, 892.63f, onProfile)
+        PixBottomItem("Discover", discoverIcon, 28.42f, onDiscover)
+        PixBottomItem("Template", templatesIcon, 244.21f, onTemplates)
+        PixBottomItem("Inbox", inboxIcon, 676.84f, onInbox)
+        PixBottomItem("Mine", profileIcon, 892.63f, onProfile)
         FixedLayer(483.16f, 27.37f, 113.68f, 113.68f) {
             Box(
                 Modifier.fillMaxSize().clip(CircleShape).background(PremiumGradient)
