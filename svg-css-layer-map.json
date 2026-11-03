@@ -108,7 +108,7 @@
       "manifest.json"
     ],
     "status": "The first-pass and component exporters are implemented. 25 verified component crops were generated from the uploaded original SVG and supplied in a drawable-nodpi WebP resource pack; binary assets are not committed to the repository.",
-    "bindingStatus": "PixScreens.kt consumes screen-specific gift-action and credit-lightning painters plus the original Agent robot artwork. PixArtworkResources.kt loads the named drawable-nodpi resources. Copy the supplied WebP files to the Android app resources before calling rememberPixArtwork().",
+    "bindingStatus": "PixScreens.kt consumes the mapped Painter slots. PixArtworkResources.kt loads the 25 named drawable-nodpi resources. The accompanying resource ZIP contains the matching lossless WebP files; copy them into the consuming Android app before calling rememberPixArtwork(). Navigation assets preserve their 64px source slots, and verified line-art counters are transparent.",
     "componentTool": "tools/export_pix_components.py",
     "componentOutputDirectory": "generated/pix-artwork",
     "componentAssets": 25,
@@ -117,7 +117,7 @@
       "lossless WebP"
     ],
     "originalSourceFilesModified": false,
-    "validationBoundary": "Source node selection and raster crops are verified against the original full-frame SVG renders. Android resource compilation and on-device Compose screenshot parity are not verified in this repository because it has no Gradle app module."
+    "validationBoundary": "The SVG source-node selections and crops were checked against the original full-frame renders. Android resource compilation and on-device Compose screenshot parity are not verified because this repository has no Gradle app module."
   },
   "componentArtwork": {
     "Template card photos": "pix_template_photo_01; pix_template_photo_02; pix_template_photo_03; pix_template_photo_04",
@@ -131,6 +131,7 @@
     "Navigation": "pix_nav_discover; pix_nav_templates; pix_nav_templates_active; pix_nav_inbox; pix_nav_profile; pix_nav_profile_active",
     "Usage sparkle": "pix_usage_sparkle",
     "Profile tabs": "pix_private_folder; pix_private_lock; pix_collection_grid",
-    "Promotion art": "pix_promotion_gem; pix_invite_gift"
+    "Promotion art": "pix_promotion_gem; pix_invite_gift",
+    "resourcePack": "pix-compose-drawable-resources.zip (25 lossless WebP assets; drawable-nodpi)"
   }
 }
