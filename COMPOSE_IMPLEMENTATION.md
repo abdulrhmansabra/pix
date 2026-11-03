@@ -73,3 +73,15 @@ PixProfileScreen(
 ## Limits
 
 This is a first Compose implementation based on the inspectable CSS measurements, not a certified pixel-perfect reproduction. Exact SVG art and text outlines still need to be exported and supplied as Painter assets. Compare screenshots at the source frame ratio (360 x 705dp and 360 x 702dp) after binding those assets. No source file (`pix.svg`, `pix.css`, or `pix.kt`) is changed by this implementation.
+
+
+## Original SVG source export (first pass)
+
+Use `tools/export_svg_artwork.py` to extract embedded raster payloads and render full-frame comparison images from the original SVG. See `SVG_ARTWORK_EXPORT.md`.
+
+Important:
+- The full-frame PNGs are visual references; they are not individual `PixArtwork` painters.
+- Extracted embedded images preserve their source IDs and `<use>` references. Some are reused as large source images through SVG clipping and transforms, so they must not be assigned directly to individual photo slots.
+- Individual component painters remain unbound until their exact SVG subtree, referenced definitions, crop, and transform chain have been verified.
+
+This first-pass export intentionally leaves `PixScreens.kt` unchanged. It does not claim pixel parity or alter the existing screen layout.
