@@ -1,0 +1,41 @@
+# Exporting original SVG artwork
+
+This stage extracts original embedded image payloads from `pix.svg` and renders two full-frame visual references. It does not infer component names from unnamed SVG groups.
+
+## Run
+
+From the repository root:
+
+```bash
+python -m pip install CairoSVG
+python tools/export_svg_artwork.py pix.svg --out generated/svg-artwork
+```
+
+The output is:
+
+```text
+generated/svg-artwork/
+  template-browsing.png
+  profile.png
+  manifest.json
+  embedded/
+    image0_0_1.jpg
+    image1_0_1.png
+    ...
+```
+
+The frame crop defaults reflect the two 1080px-wide canvases reported in the current SVG inspection: Template browsing at SVG x=1200 and Profile at SVG x=0. Override them with `--template-x` or `--profile-x` only when the source geometry has been rechecked. The SVG viewBox is validated before rendering.
+
+Use `--scale 2` or `--scale 3` for larger reference PNGs. Use `--skip-render` to extract embedded raster payloads without installing CairoSVG.
+
+## What is preserved
+
+- Embedded JPEG/PNG/WebP/GIF/SVG data-URI payloads are written byte-for-byte.
+- Each embedded image retains its original SVG element ID, declared dimensions, MIME type, SHA-256, and local `<use>` references.
+- Full-frame rendering keeps the source SVG descendants, including their original paths, gradients, patterns, `clipPath` elements, masks, and transforms. The exporter changes only the root viewport and output dimensions for each render.
+
+## Important boundary
+
+The two PNG files are full-screen comparison references, not individual reusable component painters. The files under `embedded/` are original raster sources; some are full-frame image sources reused through SVG `<use>` and clipping. Do not bind them directly to `templatePhotos`, `profilePhotos`, or icon slots without checking the associated `<use>`, clip-path, and transform chain.
+
+This exporter intentionally does not edit `pix.svg`, `pix.css`, `PixScreens.kt`, or the CSS-to-Compose slot map. The next stage is to verify each required component's actual SVG subtree and crop semantics, export that verified artwork, and only then bind it to `PixArtwork`. CairoSVG output also needs a visual comparison; successful rendering alone does not prove pixel parity.
