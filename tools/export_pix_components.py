@@ -87,7 +87,8 @@ class Exporter:
 
     def render(self, name: str, path: tuple[int, ...], children: list[int] | None = None,
                viewbox: tuple[float, float, float, float] | None = None,
-               clip: str | None = None, remove_masks: bool = False):
+               clip: str | None = None, remove_masks: bool = False,
+               trim: bool = True, transparent_black: bool = False):
         if clip:
             viewbox = clip_viewbox(self.root, clip)
         if viewbox is None:
@@ -107,8 +108,19 @@ class Exporter:
             output_height=max(1, round(height))
         )
         image = Image.open(png).convert("RGBA")
+        # Open SVG line-art paths can inherit a black fill for their counters.
+        # In the full source screens those counters reveal the #090A0B frame
+        # background, so the verified icon exports make pure-black counter
+        # pixels transparent. This is applied only to explicitly selected icons.
+        if transparent_black:
+            pixels = image.load()
+            for py in range(image.height):
+                for px in range(image.width):
+                    red, green, blue, alpha = pixels[px, py]
+                    if alpha and red == 0 and green == 0 and blue == 0:
+                        pixels[px, py] = (0, 0, 0, 0)
         bounds = image.getchannel("A").getbbox()
-        if bounds:
+        if trim and bounds:
             image = image.crop(bounds)
         image.save(png, optimize=True)
         webp = self.output_dir / f"{name}.webp"
@@ -139,28 +151,30 @@ class Exporter:
         # Header artwork differs between the two original screens.
         self.render("template_gift_action", (0, 3), clip="clip2_0_1")
         self.render("profile_gift_action", (1, 4), clip="clip22_0_1")
-        self.render("search", (0, 1), clip="clip1_0_1")
-        self.render("settings", (1, 2), clip="clip21_0_1")
-        self.render("credit_lightning_template", (0, 5), viewbox=(1922.47, 60.2938, 29.62, 35.9648))
-        self.render("credit_lightning_profile", (1, 6), viewbox=(722.105, 60, 29.474, 35.7895))
+        self.render("search", (0, 1), clip="clip1_0_1", trim=False, transparent_black=True)
+        self.render("settings", (1, 2), clip="clip21_0_1", trim=False, transparent_black=True)
+        self.render("credit_lightning_template", (0, 5), viewbox=(1922.47, 60.2938, 29.62, 35.9648), trim=False)
+        self.render("credit_lightning_profile", (1, 6), viewbox=(722.105, 60, 29.474, 35.7895), trim=False)
 
         self.render("promotion_gem", (1, 18), [3], clip="clip25_0_1")
         self.render("invite_gift", (1, 18), [7], clip="clip26_0_1")
         self.render("usage_sparkle", (0, 20, 5), [0, 1], clip="clip5_0_1")
 
-        self.render("nav_discover", (0, 25), [0], clip="clip15_0_1")
-        self.render("nav_templates_active", (0, 26), [0], clip="clip16_0_1")
-        self.render("nav_inbox", (0, 27), [0], clip="clip18_0_1")
+        # Preserve the original 64px icon-slot canvases so Compose does not
+        # enlarge or shift artwork by stretching a trimmed alpha bounding box.
+        self.render("nav_discover", (0, 25), [0], viewbox=(1275.63, 1970.66, 64.525, 64.525), trim=False, transparent_black=True)
+        self.render("nav_templates_active", (0, 26, 0), viewbox=(1492.48, 1970.66, 64.525, 64.525), trim=False)
+        self.render("nav_inbox", (0, 27), [0], viewbox=(1924.05, 1970.66, 64.525, 64.525), trim=False, transparent_black=True)
         # The full source frame visibly shows this as a head circle plus shoulder ring.
         # Removing its mask reference corrects CairoSVG's divergent masked result only in this export.
-        self.render("nav_profile", (0, 28), [0, 2], clip="clip19_0_1", remove_masks=True)
-        self.render("nav_templates", (1, 25), [0], clip="clip34_0_1")
-        self.render("nav_profile_active", (1, 27), [0, 1], clip="clip37_0_1")
+        self.render("nav_profile", (0, 28), [0, 2], viewbox=(2138.78, 1970.66, 64.525, 64.525), remove_masks=True, trim=False, transparent_black=True)
+        self.render("nav_templates", (1, 25, 0), viewbox=(291.053, 1965.26, 64.2105, 64.2105), trim=False, transparent_black=True)
+        self.render("nav_profile_active", (1, 27), [0, 1], viewbox=(939.474, 1965.26, 64.2105, 64.2105), trim=False)
 
-        self.render("private_folder", (1, 19, 0), [0], clip="clip28_0_1")
-        self.render("private_lock", (1, 19, 0), [1], clip="clip28_0_1")
-        self.render("collection_grid", (1, 19, 1), [0], clip="clip29_0_1")
-        self.render("agent_category", (0, 19), viewbox=(2131.22, 235.066, 35.965, 35.965))
+        self.render("private_folder", (1, 19, 0), [0], clip="clip28_0_1", transparent_black=True)
+        self.render("private_lock", (1, 19, 0), [1], clip="clip28_0_1", transparent_black=True)
+        self.render("collection_grid", (1, 19, 1), [0], clip="clip29_0_1", transparent_black=True)
+        self.render("agent_category", (0, 19), viewbox=(2131.22, 235.066, 35.965, 35.965), trim=False)
 
         manifest = {
             "manifestVersion": 2, "sourceSvg": self.svg_path.name,
@@ -175,6 +189,7 @@ class Exporter:
                 "Navigation labels and other dynamic text are not part of the icon resources.",
                 "All WebP files are lossless encodings of their exported PNG pixels.",
                 "For nav_profile only, the mask reference is omitted in the exported copy because CairoSVG output otherwise differs from the full-frame source rendering; the source SVG is not changed.",
+                "Navigation exports retain exact 64px icon-slot viewports. Pure-black counter-shapes are made transparent only on the verified line-art icons so the Compose frame background shows through.",
                 "The original pix.svg and pix.css are read-only inputs."
             ]
         }
