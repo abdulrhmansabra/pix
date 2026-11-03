@@ -1,0 +1,89 @@
+{
+  "sourceFiles": {
+    "css": "pix.css",
+    "svg": "pix.svg"
+  },
+  "extractionStatus": {
+    "css": "Read and measured; CSS layer names and coordinates are the source of truth.",
+    "svg": "The repository connector could not return the 3.6 MB SVG body. No vector path or embedded image has been guessed or redrawn."
+  },
+  "coordinateSystem": {
+    "frameWidthPx": 1080,
+    "pxPerDp": 3,
+    "frames": [
+      {
+        "name": "Template browsing",
+        "widthPx": 1080,
+        "heightPx": 2115,
+        "heightDp": 705
+      },
+      {
+        "name": "Profile",
+        "widthPx": 1080,
+        "heightPx": 2106,
+        "heightDp": 702
+      }
+    ]
+  },
+  "composeFiles": [
+    "compose/PixScreens.kt"
+  ],
+  "mappingPolicy": "Layer names below are exact CSS labels. SVG asset binding is performed by passing the matching exported group as a Painter to PixArtwork; missing painters intentionally render no substitute.",
+  "templateScreen": {
+    "Top navigation / Search": "search",
+    "Gift artwork": "gift",
+    "Credit lightning": "creditLightning",
+    "Scrollable template categories": [
+      "Category / Favorite",
+      "Category / Trend",
+      "Category / Casual",
+      "Category / Night Mood",
+      "Category / 🤖 Agent"
+    ],
+    "Template card / Hidden billionaire": "templatePhotos[0]",
+    "Template card / Motorcycle chase": "templatePhotos[1]",
+    "Template card / Battlefield": "templatePhotos[2]",
+    "Template card / Lion companion": "templatePhotos[3]",
+    "Bottom navigation / Template": [
+      "discover",
+      "templates",
+      "inbox",
+      "profile"
+    ],
+    "Usage sparkle": "usageSparkle",
+    "Bottom navigation active variants": {
+      "Navigation item / Discover / Active": "discoverActive",
+      "Navigation item / Template / Active": "templatesActive",
+      "Navigation item / Inbox / Active": "inboxActive",
+      "Navigation item / Mine / Active": "profileActive"
+    }
+  },
+  "profileScreen": {
+    "Subtle profile header glow": "Compose radial gradient using the CSS stops",
+    "Icon / Settings": "settings",
+    "Gift artwork": "gift",
+    "Credit lightning": "creditLightning",
+    "Profile avatar": "Compose circle; fill and border from CSS",
+    "Promotion cards": {
+      "Gem artwork": "promotionGem",
+      "Gift artwork": "inviteGift"
+    },
+    "Private folder": "privateFolder",
+    "Lock": "privateLock",
+    "Collection grid": "collectionGrid",
+    "Video thumbnail / Mountain pilot": "profilePhotos[0]",
+    "Video thumbnail / Cinematic street": "profilePhotos[1]",
+    "Bottom navigation / Profile": [
+      "discover",
+      "templates",
+      "inbox",
+      "profile"
+    ],
+    "Bottom navigation active variants": {
+      "Navigation item / Discover / Active": "discoverActive",
+      "Navigation item / Template / Active": "templatesActive",
+      "Navigation item / Inbox / Active": "inboxActive",
+      "Navigation item / Mine / Active": "profileActive"
+    }
+  }
+}
