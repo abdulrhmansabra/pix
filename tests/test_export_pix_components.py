@@ -21,7 +21,7 @@ class ExportPixComponentsTests(unittest.TestCase):
         )
         result = clone_branch(root, (0, 0), [0])
         ids = [node.get("id") for node in result.iter() if node.get("id")]
-        self.assertEqual(ids, ["icon", "shape"])
+        self.assertEqual(ids, ["screen", "icon", "shape"])
 
     def test_remove_masks_only_from_exported_copy(self):
         root = ET.fromstring(
