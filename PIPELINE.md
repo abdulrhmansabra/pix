@@ -57,9 +57,19 @@ The PNGs are full-screen comparison references, not individual component painter
 
 ## Stage 5 — Component-level source mapping and Compose binding
 
-Use the original SVG tree, the version 2 inspection report, and the exported frame references to verify each requested component's actual SVG subtree and resource dependencies. Preserve its original `clipPath`, mask, pattern, gradient, embedded image, `<use>`, and transform behavior.
+Run:
 
-Only after the node-to-CSS relationship and crop semantics are verified should a component asset be exported and bound to a `PixArtwork` property. Keep `PixScreens.kt` layout geometry unchanged unless a separate request explicitly authorizes layout edits.
+    python -m pip install CairoSVG Pillow
+    python tools/export_pix_components.py pix.svg --out generated/pix-artwork
+
+The component exporter creates 25 source-derived image crops as PNG and lossless WebP. Its manifest records each source SVG node path, source clip path, crop dimensions, exact source SVG SHA-256, and the hash of every WebP asset. The selected subtrees render with the original SVG definitions so their patterns, gradients, embedded images, and clip paths remain available.
+
+The exported components are wired into `PixArtwork` through `compose/PixArtworkResources.kt`. `compose/PixScreens.kt` now supports screen-specific header action and credit-lightning art and displays the source Agent robot image. The screen geometry, positions, dimensions, text values, and visual styling were not changed by this binding.
+
+For an Android app, copy the generated WebP files into `app/src/main/res/drawable-nodpi/` and call `rememberPixArtwork()`. This repository has no Gradle app module, so resource loading and app compilation must be verified in the consuming app. See `COMPOSE_IMPLEMENTATION.md`.
+
+Special case: the inactive Mine navigation icon's inline mask renders differently in CairoSVG than in the original full-frame render. The exporter omits that mask reference only in the exported icon copy so the exported icon matches the visible source-frame outline. The original `pix.svg` is not modified.
+
 
 ## Accuracy boundary
 

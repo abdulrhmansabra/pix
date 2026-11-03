@@ -58,8 +58,13 @@ private fun spx(value: Float) = (value / 3f).sp
 data class PixArtwork(
     val search: Painter? = null,
     val gift: Painter? = null,
+    val templateGift: Painter? = null,
+    val profileGift: Painter? = null,
     val creditLightning: Painter? = null,
+    val templateCreditLightning: Painter? = null,
+    val profileCreditLightning: Painter? = null,
     val settings: Painter? = null,
+    val agentCategory: Painter? = null,
     val discover: Painter? = null,
     val templates: Painter? = null,
     val inbox: Painter? = null,
@@ -193,7 +198,8 @@ private fun PixGift(
     artX: Float = 21.16f,
     artY: Float = 23.27f,
     artWidth: Float = 60.29f,
-    artHeight: Float = 51.83f
+    artHeight: Float = 51.83f,
+    icon: Painter? = artwork.gift
 ) {
     FixedLayer(x, y, width, height) {
         Box(
@@ -204,7 +210,7 @@ private fun PixGift(
                 .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier),
             contentAlignment = Alignment.TopStart
         ) {
-            SvgArt(artwork.gift, Modifier.offset(px(artX), px(artY))
+            SvgArt(icon, Modifier.offset(px(artX), px(artY))
                 .size(px(artWidth), px(artHeight)))
         }
     }
@@ -233,7 +239,8 @@ private fun PixCreditPill(
     subscribeHeight: Float = 74.05f,
     subscribeLabelX: Float = 21.16f,
     subscribeLabelY: Float = 17.98f,
-    subscribeFontPx: Float = 37.0225f
+    subscribeFontPx: Float = 37.0225f,
+    lightningPainter: Painter? = artwork.creditLightning
 ) {
     FixedLayer(x, y, width, height) {
         Box(
@@ -242,7 +249,7 @@ private fun PixCreditPill(
                 .background(Surface)
         )
         SvgArt(
-            artwork.creditLightning,
+            lightningPainter,
             Modifier.offset(px(lightningX), px(lightningY))
                 .size(px(lightningWidth), px(lightningHeight))
         )
@@ -333,11 +340,11 @@ private fun BoxScope.PixBottomItem(
 }
 
 @Composable
-private fun PixCategory(label: String, widthPx: Float, selected: Boolean) {
+private fun PixCategory(label: String, widthPx: Float, selected: Boolean, agentIcon: Painter? = null) {
     val borderColor = if (selected) Color(0xFFEDEEF1) else Color(0xFF686F7E)
     val textColor = when {
         selected -> TextPrimary
-        label == "🤖 Agent" -> Color(0xFF9941AA)
+        label == "Agent" -> Color(0xFF9941AA)
         else -> TextMuted
     }
     Box(
@@ -346,7 +353,17 @@ private fun PixCategory(label: String, widthPx: Float, selected: Boolean) {
             .border(px(2.85f), borderColor, RoundedCornerShape(px(27.5f))),
         contentAlignment = Alignment.Center
     ) {
-        PixText(label, 35.96f, textColor, FontWeight.Medium, linePx = 42f)
+        if (label == "Agent" && agentIcon != null) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(px(10f)),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                SvgArt(agentIcon, Modifier.size(px(35.96f)))
+                PixText(label, 35.96f, textColor, FontWeight.Medium, linePx = 42f)
+            }
+        } else {
+            PixText(label, 35.96f, textColor, FontWeight.Medium, linePx = 42f)
+        }
     }
 }
 
@@ -446,9 +463,11 @@ fun PixTemplateBrowsingScreen(
             Modifier.offset(px(42.31f), px(50.77f)).size(px(63.47f))
                 .then(if (onSearch != null) Modifier.clickable { onSearch() } else Modifier)
         )
-        PixGift(artwork, 570.15f, 30.68f, 102.61f, 96.26f, onGift)
+        PixGift(artwork, 570.15f, 30.68f, 102.61f, 96.26f, onGift,
+            icon = artwork.templateGift ?: artwork.gift)
         PixCreditPill(
-            credits, text.subscribe, artwork, 700.25f, 30.68f, 344.84f, 96.26f, onSubscribe
+            credits, text.subscribe, artwork, 700.25f, 30.68f, 344.84f, 96.26f, onSubscribe,
+            lightningPainter = artwork.templateCreditLightning ?: artwork.creditLightning
         )
 
         // Scrollable template categories
@@ -462,7 +481,7 @@ fun PixTemplateBrowsingScreen(
             PixCategory("Trend", 163.96f, true)
             PixCategory("Casual", 181.94f, false)
             PixCategory("Night Mood", 257.04f, false)
-            PixCategory("🤖 Agent", 217.9f, false)
+            PixCategory("Agent", 217.9f, false, artwork.agentCategory)
         }
 
         // Template cards: the four positions and dimensions come directly from pix.css.
@@ -609,7 +628,8 @@ fun PixProfileScreen(
         )
         PixGift(
             artwork, 570.53f, 30.53f, 102.11f, 95.79f, onGift,
-            artX = 21.05f, artY = 23.16f, artWidth = 60f, artHeight = 51.58f
+            artX = 21.05f, artY = 23.16f, artWidth = 60f, artHeight = 51.58f,
+            icon = artwork.profileGift ?: artwork.gift
         )
         PixCreditPill(
             credits, text.subscribe, artwork, 700f, 30.53f, 343.16f, 95.79f, onSubscribe,
@@ -619,7 +639,8 @@ fun PixProfileScreen(
             subscribeX = 122.11f, subscribeY = 11.58f,
             subscribeWidth = 208.42f, subscribeHeight = 73.68f,
             subscribeLabelX = 21.05f, subscribeLabelY = 17.89f,
-            subscribeFontPx = 36.8421f
+            subscribeFontPx = 36.8421f,
+            lightningPainter = artwork.profileCreditLightning ?: artwork.creditLightning
         )
 
         // Profile avatar and initial

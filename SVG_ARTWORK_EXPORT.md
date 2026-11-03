@@ -38,4 +38,26 @@ Use `--scale 2` or `--scale 3` for larger reference PNGs. Use `--skip-render` to
 
 The two PNG files are full-screen comparison references, not individual reusable component painters. The files under `embedded/` are original raster sources; some are full-frame image sources reused through SVG `<use>` and clipping. Do not bind them directly to `templatePhotos`, `profilePhotos`, or icon slots without checking the associated `<use>`, clip-path, and transform chain.
 
-This exporter intentionally does not edit `pix.svg`, `pix.css`, `PixScreens.kt`, or the CSS-to-Compose slot map. The next stage is to verify each required component's actual SVG subtree and crop semantics, export that verified artwork, and only then bind it to `PixArtwork`. CairoSVG output also needs a visual comparison; successful rendering alone does not prove pixel parity.
+The original `pix.svg` and `pix.css` remain read-only. This first-pass full-frame exporter does not perform component binding by itself; the component-level mapping, resource export, and Painter wiring are implemented in the Component-level export section below. CairoSVG output still needs comparison with the source full-frame rendering and does not prove Android pixel parity.
+
+
+## Component-level export
+
+Once the original pix.svg is available, use the component exporter to create named Painter assets from the verified source tree:
+
+```bash
+python -m pip install CairoSVG Pillow
+python tools/export_pix_components.py pix.svg --out generated/pix-artwork
+```
+
+The exporter creates 25 component crops as PNG plus lossless WebP, and manifest.json. It keeps the complete source defs block when rendering a selected subtree so referenced patterns, gradients, images, masks and clip paths remain available. The manifest records SVG node paths and exact clip path IDs.
+
+The output includes the four template-photo crops, two profile-photo crops, distinct header actions for both screens, separate credit lightning icons, search and settings, navigation icons, profile tabs, promotional art, usage sparkle, and the source Agent robot.
+
+For Android, copy only the .webp files to app/src/main/res/drawable-nodpi and preserve their filenames. Use compose/PixArtworkResources.kt to load them into PixArtwork. See COMPOSE_IMPLEMENTATION.md for the R namespace note and the call sites.
+
+The navigation icon exports keep their original 64px SVG icon-slot viewport, including transparent inset; this prevents the Compose Painter box from enlarging the visible line art. Selected line-art icons also convert pure-black counter pixels to transparency so the actual #090A0B screen background shows through, as it does in the full-frame source rendering. This affects only the exported PNG/WebP copies, not pix.svg.
+
+The inactive Mine icon is a special case: its inline SVG mask is interpreted differently by CairoSVG than in the original full-frame render. The exporter removes that mask reference only in the exported icon subtree, matching the visible outlined head-and-shoulders icon in the supplied source render. The original SVG remains unchanged.
+
+This export stage validates component source selection and preserves the actual image crops. It does not claim Android screenshot pixel parity; the consuming app still needs to load the resources and compare its rendered screens against the source full-frame references.
