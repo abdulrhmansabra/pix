@@ -6,7 +6,7 @@
 - Both screens use the original 1080px CSS coordinate system and the measured 3px-to-1dp scale. They preserve the source frame aspect ratio and scale to fit the available area.
 - Backgrounds, surfaces, card dimensions, spacing, gradients, borders, text sizes, and the positions of the visible components are taken from `pix.css`.
 - All source text that is not explicitly readable in CSS is supplied by the caller through screen text data classes. No labels are invented.
-- Artwork is injected through `PixArtwork`. This is deliberate: the source SVG is about 3.6 MB and the GitHub file connector did not return its contents, so it was not possible to truthfully map every path, crop, or embedded photo in this run. Missing Painter assets stay empty rather than being replaced with approximations.
+- Artwork is injected through `PixArtwork`. The initial version left unmapped Painter slots empty; after the original SVG was supplied, the verified source-derived resources and screen-specific bindings were added in the final section below.
 
 ## Hooking up the source artwork
 
@@ -72,7 +72,7 @@ PixProfileScreen(
 
 ## Limits
 
-This is a first Compose implementation based on the inspectable CSS measurements, not a certified pixel-perfect reproduction. Exact SVG art and text outlines still need to be exported and supplied as Painter assets. Compare screenshots at the source frame ratio (360 x 705dp and 360 x 702dp) after binding those assets. No source file (`pix.svg`, `pix.css`, or `pix.kt`) is changed by this implementation.
+This is a first Compose implementation based on the inspectable CSS measurements, not a certified pixel-perfect reproduction. The component-level SVG art exports and Painter resource bindings are now provided in the “Verified SVG artwork binding” section below. Compare screenshots at the source frame ratio (360 x 705dp and 360 x 702dp) in the consuming app. No source file (`pix.svg`, `pix.css`, or `pix.kt`) is changed by this implementation.
 
 
 ## Original SVG source export (first pass)
@@ -82,9 +82,9 @@ Use `tools/export_svg_artwork.py` to extract embedded raster payloads and render
 Important:
 - The full-frame PNGs are visual references; they are not individual `PixArtwork` painters.
 - Extracted embedded images preserve their source IDs and `<use>` references. Some are reused as large source images through SVG clipping and transforms, so they must not be assigned directly to individual photo slots.
-- Individual component painters remain unbound until their exact SVG subtree, referenced definitions, crop, and transform chain have been verified.
+- This was the initial export stage. The verified component mapping, crop extraction, and Painter bindings are implemented in the final section below.
 
-This first-pass export intentionally leaves `PixScreens.kt` unchanged. It does not claim pixel parity or alter the existing screen layout.
+The first-pass exporter by itself did not modify `PixScreens.kt`; the later verified-artwork stage below adds screen-specific Painter bindings without changing the screen layout geometry. It does not claim final Compose pixel parity.
 
 
 ## Verified SVG artwork binding
