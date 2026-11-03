@@ -44,6 +44,8 @@ def parse_data_uri(uri: str) -> tuple[str, bytes]:
     parts = header.split(";")
     mime_type = parts[0].strip().lower() or "application/octet-stream"
     if "base64" in {part.strip().lower() for part in parts[1:]}:
+        # SVG exporters may wrap base64 data URIs across lines. Whitespace is not payload.
+        payload = re.sub(r"\\s+", "", payload)
         try:
             content = base64.b64decode(payload, validate=True)
         except Exception as exc:
@@ -107,8 +109,7 @@ def extract_embedded_images(root: ET.Element, output_dir: Path) -> list[dict[str
             )
         filename = safe_stem(image_id, f"image_{index}") + extension
         destination = output_dir / filename
-        if destination.exists():
-            raise FileExistsError(f"Refusing to overwrite an existing export: {destination}")
+        # The output directory is generated data; rerunning the exporter is intentionally idempotent.
         destination.write_bytes(payload)
 
         results.append({
