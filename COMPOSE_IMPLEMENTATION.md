@@ -18,7 +18,8 @@ Export each named artwork group from `pix.svg` without changing its crop, then p
 | Gift artwork | `gift` |
 | Credit lightning | `creditLightning` |
 | Settings icon | `settings` |
-| Bottom navigation icons | `discover`, `templates`, `inbox`, `profile` |
+| Bottom navigation icons | `discover`, `templates`, `inbox`, `profile` plus optional `discoverActive`, `templatesActive`, `inboxActive`, `profileActive` variants |
+| Template usage sparkle | `usageSparkle` |
 | Promotion gem | `promotionGem` |
 | Invite gift artwork | `inviteGift` |
 | Four template photographs | `templatePhotos` in CSS card order |
@@ -60,8 +61,6 @@ PixProfileScreen(
         subscriptionSubtitle = /* exact source label */,
         inviteTitle = /* exact source label */,
         inviteSubtitle = /* exact source label */,
-        privateTab = /* exact source label */,
-        collectionTab = /* exact source label */,
         videoFilter = /* exact source label */,
         imageFilter = /* exact source label */,
         agentFilter = /* exact source label */
