@@ -38,7 +38,7 @@ Use `--scale 2` or `--scale 3` for larger reference PNGs. Use `--skip-render` to
 
 The two PNG files are full-screen comparison references, not individual reusable component painters. The files under `embedded/` are original raster sources; some are full-frame image sources reused through SVG `<use>` and clipping. Do not bind them directly to `templatePhotos`, `profilePhotos`, or icon slots without checking the associated `<use>`, clip-path, and transform chain.
 
-This exporter intentionally does not edit `pix.svg`, `pix.css`, `PixScreens.kt`, or the CSS-to-Compose slot map. The next stage is to verify each required component's actual SVG subtree and crop semantics, export that verified artwork, and only then bind it to `PixArtwork`. CairoSVG output also needs a visual comparison; successful rendering alone does not prove pixel parity.
+The original `pix.svg` and `pix.css` remain read-only. This first-pass full-frame exporter does not perform component binding by itself; the component-level mapping, resource export, and Painter wiring are implemented in the Component-level export section below. CairoSVG output still needs comparison with the source full-frame rendering and does not prove Android pixel parity.
 
 
 ## Component-level export
