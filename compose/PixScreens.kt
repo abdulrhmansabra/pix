@@ -106,8 +106,6 @@ data class PixProfileScreenText(
     val subscriptionSubtitle: String,
     val inviteTitle: String,
     val inviteSubtitle: String,
-    val privateTab: String,
-    val collectionTab: String,
     val videoFilter: String,
     val imageFilter: String,
     val agentFilter: String
